@@ -1,0 +1,45 @@
+.recipe-list {
+    max-height: 400px; /* Adjust as needed */
+    overflow-y: auto; /* Enable vertical scrollbar when content exceeds max height */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.recipe {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    clear: both; /* Ensure each recipe starts on a new line */
+}
+
+.recipe img {
+    max-width: 100px; /* Adjust image size as needed */
+    height: auto;
+    float: left;
+    margin-right: 10px;
+}
+
+.recipe h2 {
+    margin-top: 0;
+    cursor: pointer;
+    margin-bottom: 5px; /* Add margin between recipe titles */
+}
+
+.recipe-details {
+    display: none;
+    margin-top: 10px;
+    clear: both; /* Ensure recipe details start on a new line */
+}
+
+.recipe-details p {
+    margin: 0;
+}
+
+
+/* -Need to center name under recipes
+-ensure picture is optimable size  in vewing
+-lower size of search by a small amount and to bottom of page
+-filter options?
+ */

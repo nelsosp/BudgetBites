@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="SearchRecipe.css">
+
+    <title>Recipe Search by Price</title>
+
+</head>
+<body>
+    <h1>Recipe Search by Price</h1>
+    <div>
+        <label for="maxPrice">Enter Maximum Price:</label>
+        <input type="number" id="maxPrice" name="maxPrice" step="0.01" placeholder="Enter maximum price...">
+        <button onclick="handleSearch()">Find Recipes</button>
+    </div>
+    <div class="recipe-list" id="recipeList">
+        <!-- Recipe list will be displayed here -->
+    </div>
+
+    <script src="SearchRecipes.js"></script>
+</body>
+</html>
