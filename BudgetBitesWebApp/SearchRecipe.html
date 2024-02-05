@@ -6,7 +6,11 @@
     <link rel="stylesheet" href="SearchRecipe.css">
     <title>Budget Bites</title>
 </head>
+
 <body>
+<!---------------------------------------------------------------------------------------------------------->
+
+    <!-- Div containing the search bar of budget and keyword filters -->
     <div class="search-bar">
         <label for="maxPrice">Budget:</label>
         <input type="number" id="maxPrice" name="maxPrice" step="0.01" placeholder="Enter budget amount...">
@@ -15,36 +19,41 @@
         <button onclick="handleSearch()">Find Recipes</button>
     </div>
 
-    <label>Please Select Preferences:</label>
-    
-<!-- Cuisine Type Checkboxes -->
+<!--------------------------------------------------------------------------------------------------------->
+
+<label>Please Select Preferences</label>
+<!-- Cuisine Type -->
 <div id="cuisine">
     <label><input type="checkbox" value="italian"> Italian</label>
     <label><input type="checkbox" value="mexican"> Mexican</label>
     <label><input type="checkbox" value="thai"> Thai</label>
-    <!-- Add more cuisine types here -->
+    <!-- Add more cuisine types if wanting -->
 </div>
 
-<!-- Diet Type Checkboxes -->
+<!-- Diet Type -->
 <div id="diet">
     <label><input type="checkbox" value="vegetarian"> Vegetarian</label>
     <label><input type="checkbox" value="vegan"> Vegan</label>
     <label><input type="checkbox" value="paleo"> Paleo</label>
-    <!-- Add more diet types here -->
     <label><input type="checkbox" value="gluten free"> Gluten-Free</label>
     <label><input type="checkbox" value="keto"> Keto</label>
     <label><input type="checkbox" value="dairy free"> Dairy-Free</label>
     <label><input type="checkbox" value="low carb"> Low Carb</label>
     <label><input type="checkbox" value="low calorie"> Low Calorie</label>
     <label><input type="checkbox" value="low sodium"> Low Sodium</label>
+    <!-- Add more diet types if wanting -->
 </div>
 
-    
-    <script src="SearchRecipes.js"></script>
-    
-    <footer>
-        <div class="recipe-list" id="recipeList">
-        </div>
-    </footer>
+<!-- ------------------------------------------------------------------------------------------------------ -->
+
+<!-- Area where search/filter results show up -->
+<div class="recipe-list" id="recipeList">
+</div>
+
+<!------------------------------------------------------------------------------------------------------------->
+
 </body>
+
+
+<script src="SearchRecipes.js"></script>
 </html>
