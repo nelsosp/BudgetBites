@@ -6,7 +6,8 @@
     bottom: 550px;
 }
 
-/* Entire Recipe list display */
+/* ------------------------------------------------------------------------------------------------ */
+/* Recipe List Display Styling Area*/
 .recipe-list {
     max-height: 50%; 
     overflow-y: auto; 
@@ -30,9 +31,34 @@
     cursor: pointer;
 }
 
+/* ------------------------------------------------------------------------------------------------------------ */
 
-/* -Need to center name under recipes
--ensure picture is optimable size  in vewing
--lower size of search by a small amount and to bottom of page
--filter options?
- */
+/* Filter Preferences Styling Area */
+
+.Preference-Header {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    bottom: 560px;
+}
+
+
+
+.cuisine {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    bottom: 520px;
+}
+
+
+
+.diet {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    bottom: 500px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
