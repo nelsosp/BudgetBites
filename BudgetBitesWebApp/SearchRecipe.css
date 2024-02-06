@@ -4,10 +4,29 @@
     text-align: center;
     width: 100%;
     bottom: 550px;
+    color: goldenrod;
+    font-weight: 800;
 }
 
-/* ------------------------------------------------------------------------------------------------ */
+
+
 /* Recipe List Display Styling Area*/
+.recipe-container {
+    bottom: 0;
+    width: 60%;
+    left: 9%;
+    padding: 210px;
+    border-radius: 15px;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    background-color: rgba(240, 240, 240, 0.7);
+}
+
+.recipe-container h2 {
+    color: rgba(240, 240, 240, 0);
+}
+
 .recipe-list {
     max-height: 50%; 
     overflow-y: auto; 
@@ -16,12 +35,13 @@
     bottom: 0;
     left: 10%;
     width: 80%;
-    background-color: goldenrod;
+    background-color: grey;
+    background-color: rgba(240, 240, 240, 0.5);
 }
 
 /* Borders for recipes */
 .recipe {
-    border: 5px solid black;
+    border: 1px solid black;
     padding: 40px;
     cursor: pointer;
 }
@@ -29,9 +49,12 @@
 /* Recipe title text */
 .recipe h2 {
     cursor: pointer;
+    z-index: 10;
+    color: black;
 }
 
-/* ------------------------------------------------------------------------------------------------------------ */
+
+
 
 /* Filter Preferences Styling Area */
 
@@ -40,6 +63,8 @@
     text-align: center;
     width: 100%;
     bottom: 560px;
+    z-index: 10;
+    color: goldenrod;
 }
 
 
@@ -49,6 +74,9 @@
     text-align: center;
     width: 100%;
     bottom: 520px;
+    z-index: 10;
+    color: goldenrod;
+    font-weight: 800;
 }
 
 
@@ -58,7 +86,20 @@
     text-align: center;
     width: 100%;
     bottom: 500px;
+    z-index: 10;
+    color: goldenrod;
+    font-weight: 800;
 }
 
 
-/* ------------------------------------------------------------------------------------------------------------ */
+/* video background edits */
+.showcase video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+
+}
