@@ -101,7 +101,7 @@ function displayRecipeDetails(recipe, recipeDetailsDiv) {
     ingredientsHeading.textContent = 'Ingredients:';
     recipeDetailsDiv.appendChild(ingredientsHeading);
 
-    const ingredientsList = document.createElement('ul');
+    const ingredientsList = document.createElement('p');
     recipe.extendedIngredients.forEach(ingredient => {
         const ingredientItem = document.createElement('li');
         ingredientItem.textContent = `${ingredient.original}`;
@@ -113,9 +113,17 @@ function displayRecipeDetails(recipe, recipeDetailsDiv) {
     instructionsHeading.textContent = 'Instructions:';
     recipeDetailsDiv.appendChild(instructionsHeading);
 
-    const instructions = document.createElement('p');
-    instructions.textContent = recipe.instructions || 'Instructions not available.';
-    recipeDetailsDiv.appendChild(instructions);
+// Removes any weird additions returned from api results in instructions and orders instructions
+if (recipe.instructions.includes('<ol>') && recipe.instructions.includes('<li>')) {
+    recipeDetailsDiv.innerHTML += recipe.instructions;
+} else {
+    const instructionSentences = recipe.instructions.split('. ');
+    instructionSentences.forEach(sentence => {
+        const instructionParagraph = document.createElement('p');
+        instructionParagraph.textContent = sentence.trim();
+        recipeDetailsDiv.appendChild(instructionParagraph);
+    });
+}
 
     recipeDetailsDiv.style.display = 'block';
 }
