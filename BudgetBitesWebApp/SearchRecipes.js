@@ -31,77 +31,22 @@ async function fetchRecipeDetails(recipeId) {
     }
 }
 
-// Function to handle user search with filters and keyword
-function handleSearch() {
-    const maxPrice = parseFloat(document.getElementById('maxPrice').value);
-    const cuisineFilters = Array.from(document.querySelectorAll('#cuisine input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
-    const dietFilters = Array.from(document.querySelectorAll('#diet input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
-    const keyword = document.getElementById('keyword').value.trim();
-
-    if (isNaN(maxPrice)) {
-        alert('Please enter a valid price.');
-        return;
-    }
-
-    fetchRecipesWithFilters(maxPrice, cuisineFilters.join(','), dietFilters.join(','), keyword)
-        .then(recipes => {
-            if (recipes.length === 0) {
-                alert('No recipes found.');
-                return;
-            }
-
-            recipes.sort((a, b) => b.pricePerServing - a.pricePerServing);
-
-            const recipeListDiv = document.getElementById('recipeList');
-            recipeListDiv.innerHTML = '';
-
-            recipes.forEach(recipe => {
-                const recipeDiv = document.createElement('div');
-                recipeDiv.classList.add('recipe');
-
-                const recipeTitle = document.createElement('h2');
-                recipeTitle.textContent = recipe.title;
-
-                const recipeImage = document.createElement('img');
-                recipeImage.src = recipe.image;
-
-                recipeDiv.appendChild(recipeImage);
-                recipeDiv.appendChild(recipeTitle);
-
-                const recipeDetailsDiv = document.createElement('div');
-                recipeDetailsDiv.classList.add('recipe-details');
-                recipeDiv.appendChild(recipeDetailsDiv);
-
-                recipeTitle.addEventListener('click', () => {
-                    if (recipeDetailsDiv.style.display === 'block') {
-                        recipeDetailsDiv.style.display = 'none';
-                    } else {
-                        fetchRecipeDetails(recipe.id)
-                            .then(recipeDetails => {
-                                displayRecipeDetails(recipeDetails, recipeDetailsDiv);
-                            });
-                    }
-                });
-
-                recipeListDiv.appendChild(recipeDiv);
-            });
-        });
-}
-
-// Function to display recipe details
-function displayRecipeDetails(recipe, recipeDetailsDiv) {
+// Function to display recipe details below the respective recipe
+function displayRecipeDetails(recipe, recipeItem) {
     if (!recipe) {
-        recipeDetailsDiv.innerHTML = 'Recipe details not available.';
+        recipeItem.innerHTML += '<p>Recipe details not available.</p>';
         return;
     }
 
-    recipeDetailsDiv.innerHTML = '';
+    const recipeDetailsDiv = document.createElement('div');
+    recipeDetailsDiv.classList.add('recipe-details');
 
+    // Construct the recipe details
     const ingredientsHeading = document.createElement('h3');
     ingredientsHeading.textContent = 'Ingredients:';
     recipeDetailsDiv.appendChild(ingredientsHeading);
 
-    const ingredientsList = document.createElement('p');
+    const ingredientsList = document.createElement('ul');
     recipe.extendedIngredients.forEach(ingredient => {
         const ingredientItem = document.createElement('li');
         ingredientItem.textContent = `${ingredient.original}`;
@@ -113,17 +58,103 @@ function displayRecipeDetails(recipe, recipeDetailsDiv) {
     instructionsHeading.textContent = 'Instructions:';
     recipeDetailsDiv.appendChild(instructionsHeading);
 
-// Removes any weird additions returned from api results in instructions and orders instructions
-if (recipe.instructions.includes('<ol>') && recipe.instructions.includes('<li>')) {
-    recipeDetailsDiv.innerHTML += recipe.instructions;
-} else {
-    const instructionSentences = recipe.instructions.split('. ');
-    instructionSentences.forEach(sentence => {
-        const instructionParagraph = document.createElement('p');
-        instructionParagraph.textContent = sentence.trim();
-        recipeDetailsDiv.appendChild(instructionParagraph);
-    });
+    // Check if instructions are in HTML format
+    if (recipe.instructions && recipe.instructions.length > 0 && recipe.instructions.includes('<ol>') && recipe.instructions.includes('<li>')) {
+        // If instructions are already in HTML format, display as is
+        const instructionsDiv = document.createElement('div');
+        instructionsDiv.innerHTML = recipe.instructions;
+        recipeDetailsDiv.appendChild(instructionsDiv);
+    } else {
+        // If instructions are plain text, split by sentences and display each sentence as a paragraph
+        const instructionSentences = recipe.instructions.split('. ');
+        instructionSentences.forEach(sentence => {
+            const instructionParagraph = document.createElement('p');
+            instructionParagraph.textContent = sentence.trim();
+            recipeDetailsDiv.appendChild(instructionParagraph);
+        });
+    }
+
+    // Append the recipe details below the respective recipe
+    recipeItem.appendChild(recipeDetailsDiv);
 }
 
-    recipeDetailsDiv.style.display = 'block';
+async function displayRecipesWithTotalCost(recipes, maxPrice) {
+    const recipeContainer = document.getElementById('recipeList');
+    recipeContainer.innerHTML = ''; // Clear previous content
+
+    if (recipes.length === 0) {
+        recipeContainer.textContent = 'No recipes found.';
+        return;
+    }
+
+    for (let i = 0; i < recipes.length; i++) {
+        const recipe = recipes[i];
+        const totalCost = await fetchTotalCost(recipe.id);
+        if (totalCost && totalCost / 100 <= maxPrice) {
+            const recipeItem = document.createElement('div');
+            recipeItem.classList.add('recipe-item');
+
+            const recipeDiv = document.createElement('div');
+            recipeDiv.classList.add('recipe');
+
+            const recipeTitle = document.createElement('h2');
+            recipeTitle.textContent = recipe.title;
+
+            const recipeImage = document.createElement('img');
+            recipeImage.src = recipe.image;
+
+            recipeDiv.appendChild(recipeImage);
+            recipeDiv.appendChild(recipeTitle);
+
+            const totalCostInDollars = (totalCost / 100).toFixed(2);
+            const totalCostElement = document.createElement('p');
+            totalCostElement.textContent = `Total Cost: $${totalCostInDollars}`;
+            recipeDiv.appendChild(totalCostElement);
+
+            recipeItem.appendChild(recipeDiv);
+
+            // Attach event listener to toggle recipe details when the title is clicked
+            recipeTitle.addEventListener('click', async () => {
+                // Check if recipe details are already displayed
+                const recipeDetailsDiv = recipeItem.querySelector('.recipe-details');
+                if (recipeDetailsDiv) {
+                    // If details are displayed, remove them
+                    recipeDetailsDiv.remove();
+                } else {
+                    // If details are not displayed, fetch and display them
+                    const recipeDetails = await fetchRecipeDetails(recipe.id);
+                    displayRecipeDetails(recipeDetails, recipeItem);
+                }
+            });
+
+            recipeContainer.appendChild(recipeItem);
+        }
+    }
+}
+
+async function handleSearch() {
+    const maxPrice = parseFloat(document.getElementById('maxPrice').value);
+    const cuisineFilters = Array.from(document.querySelectorAll('#cuisine input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
+    const dietFilters = Array.from(document.querySelectorAll('#diet input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
+    const keyword = document.getElementById('keyword').value.trim();
+
+    if (isNaN(maxPrice)) {
+        alert('Please enter a valid price.');
+        return;
+    }
+
+    const recipes = await fetchRecipesWithFilters(maxPrice, cuisineFilters.join(','), dietFilters.join(','), keyword);
+    await displayRecipesWithTotalCost(recipes, maxPrice);
+}
+
+async function fetchTotalCost(recipeId) {
+    const totalCostUrl = `https://api.spoonacular.com/recipes/${recipeId}/priceBreakdownWidget.json?apiKey=${apiKey}`;
+    try {
+        const response = await fetch(totalCostUrl);
+        const data = await response.json();
+        return data.totalCost;
+    } catch (error) {
+        console.error(`Error fetching total cost for recipe ID ${recipeId}:`, error);
+        return null;
+    }
 }

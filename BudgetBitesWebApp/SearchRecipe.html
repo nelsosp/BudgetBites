@@ -14,55 +14,54 @@
         <!-- <div class="overlay"></div> -->
     </div>
 
-
-<!---------------------------------------------------------------------------------------------------------->
-
     <!-- Div containing the search bar of budget and keyword filters -->
     <div class="search-bar">
-        <label for="maxPrice">Budget:</label>
-        <input type="number" id="maxPrice" name="maxPrice" step="0.01" placeholder="Enter budget amount...">
+        <label for="maxPrice">Budget ($):</label>
+        <input type="number" id="maxPrice" name="maxPrice" min="0" step="0.01" placeholder="Enter budget amount...">
         <label for="keyword">Keyword:</label>
         <input type="text" id="keyword" placeholder="Enter keyword">
         <button onclick="handleSearch()">Find Recipes</button>
     </div>
 
-<!--------------------------------------------------------------------------------------------------------->
+    <h1 class="Preference-Header">Please Input Preferences</h1>
+    <!-- Cuisine Type -->
+    <div class="cuisine" id="cuisine">
+        <label><input type="checkbox" value="italian"> Italian</label>
+        <label><input type="checkbox" value="mexican"> Mexican</label>
+        <label><input type="checkbox" value="thai"> Thai</label>
+        <label><input type="checkbox" value="japanese"> Japanese</label>
+        <label><input type="checkbox" value="chinese"> Chinese</label>
+        <label><input type="checkbox" value="indian"> Indian</label>
+        <label><input type="checkbox" value="american"> American</label>
+        <!-- Add more cuisine types if wanting -->
+    </div>
 
-<h1 class="Preference-Header">Please Input Preferences</h1>
-<!-- Cuisine Type -->
-<div class="cuisine" id="cuisine">
-    <label><input type="checkbox" value="italian"> Italian</label>
-    <label><input type="checkbox" value="mexican"> Mexican</label>
-    <label><input type="checkbox" value="thai"> Thai</label>
-    <!-- Add more cuisine types if wanting -->
-</div>
+    <!-- Diet Type -->
+    <div class="diet" id="diet">
+        <label><input type="checkbox" value="vegetarian"> Vegetarian</label>
+        <label><input type="checkbox" value="vegan"> Vegan</label>
+        <label><input type="checkbox" value="paleo"> Paleo</label>
+        <label><input type="checkbox" value="gluten free"> Gluten-Free</label>
+        <label><input type="checkbox" value="keto"> Keto</label>
+        <label><input type="checkbox" value="dairy free"> Dairy-Free</label>
+        <label><input type="checkbox" value="low carb"> Low Carb</label>
+        <label><input type="checkbox" value="low calorie"> Low Calorie</label>
+        <label><input type="checkbox" value="low sodium"> Low Sodium</label>
+        <!-- Add more diet types if wanting -->
+    </div>
 
-<!-- Diet Type -->
-<div class="diet" id="diet">
-    <label><input type="checkbox" value="vegetarian"> Vegetarian</label>
-    <label><input type="checkbox" value="vegan"> Vegan</label>
-    <label><input type="checkbox" value="paleo"> Paleo</label>
-    <label><input type="checkbox" value="gluten free"> Gluten-Free</label>
-    <label><input type="checkbox" value="keto"> Keto</label>
-    <label><input type="checkbox" value="dairy free"> Dairy-Free</label>
-    <label><input type="checkbox" value="low carb"> Low Carb</label>
-    <label><input type="checkbox" value="low calorie"> Low Calorie</label>
-    <label><input type="checkbox" value="low sodium"> Low Sodium</label>
-    <!-- Add more diet types if wanting -->
-</div>
+    <!-- Area where search/filter results show up -->
+    <div class="recipe-container">
+        <h2>.</h2>
+        <div class="recipe-list" id="recipeList"></div>
+        <div id="recipeDetails"></div>
+    </div>
 
-<!-- ------------------------------------------------------------------------------------------------------ -->
+    <!-- Div to display recipe details -->
+    <!-- DOUBLE CHECK THIS, UNSURE IF NEEDED -->
+    <div id="recipeDetails"></div>
 
-<!-- Area where search/filter results show up -->
-<div class="recipe-container">
-    <h2>.</h2>
-    <div class="recipe-list" id="recipeList"></div>
-</div>
-
-<!------------------------------------------------------------------------------------------------------------->
-
+    <!-- Include the JavaScript file -->
+    <script src="SearchRecipes.js"></script>
 </body>
-
-
-<script src="SearchRecipes.js"></script>
 </html>

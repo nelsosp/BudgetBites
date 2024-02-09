@@ -3,7 +3,7 @@
     position: fixed;
     text-align: center;
     width: 100%;
-    bottom: 550px;
+    bottom: 670px;
     color: goldenrod;
     font-weight: 800;
 }
@@ -11,16 +11,14 @@
 
 
 /* Recipe List Display Styling Area*/
+
+/* White box for return area */
 .recipe-container {
-    bottom: 0;
-    width: 60%;
-    left: 9%;
     padding: 210px;
     border-radius: 15px;
-    position: absolute;
-    text-align: center;
+    position: relative;
     z-index: 2;
-    background-color: rgba(240, 240, 240, 0.7);
+    background-color: rgba(240, 240, 240, 0.1);
 }
 
 .recipe-container h2 {
@@ -62,9 +60,9 @@
     position: fixed;
     text-align: center;
     width: 100%;
-    bottom: 560px;
+    bottom: 700px;
     z-index: 10;
-    color: goldenrod;
+    color: white;
 }
 
 
@@ -73,10 +71,13 @@
     position: fixed;
     text-align: center;
     width: 100%;
-    bottom: 520px;
+    bottom: 600px;
     z-index: 10;
     color: goldenrod;
     font-weight: 800;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
 }
 
 
@@ -85,7 +86,7 @@
     position: fixed;
     text-align: center;
     width: 100%;
-    bottom: 500px;
+    bottom: 530px;
     z-index: 10;
     color: goldenrod;
     font-weight: 800;
