@@ -1,9 +1,9 @@
 .search-bar {
     z-index: 10;
-    position: fixed;
+    position: relative;
     text-align: center;
     width: 100%;
-    bottom: 670px;
+    top: 130px;
     color: goldenrod;
     font-weight: 800;
 }
@@ -14,11 +14,14 @@
 
 /* White box for return area */
 .recipe-container {
-    padding: 210px;
+    padding: 150px;
+    margin: 0 auto;
+    width: 50%;
     border-radius: 15px;
     position: relative;
     z-index: 2;
     background-color: rgba(240, 240, 240, 0.1);
+    top: -100px;
 }
 
 .recipe-container h2 {
@@ -26,15 +29,18 @@
 }
 
 .recipe-list {
-    max-height: 50%; 
-    overflow-y: auto; 
+    max-height: 60%; 
+    width: 80%;
+    overflow-y: auto;
     text-align: center;
     position: fixed;
-    bottom: 0;
-    left: 10%;
-    width: 80%;
+    border-radius: 15px;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%);
     background-color: grey;
     background-color: rgba(240, 240, 240, 0.5);
+    z-index: 10;
 }
 
 /* Borders for recipes */
@@ -51,16 +57,19 @@
     color: black;
 }
 
-
+.recipe p {
+    color: black;
+    font-weight: 800;
+}
 
 
 /* Filter Preferences Styling Area */
 
 .Preference-Header {
-    position: fixed;
+    position: relative;
     text-align: center;
     width: 100%;
-    bottom: 700px;
+    top: 20px;
     z-index: 10;
     color: white;
 }
@@ -68,25 +77,22 @@
 
 
 .cuisine {
-    position: fixed;
+    position: relative;
     text-align: center;
     width: 100%;
-    bottom: 600px;
+    top: 100px;
     z-index: 10;
     color: goldenrod;
     font-weight: 800;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
 }
 
 
 
 .diet {
-    position: fixed;
+    position: relative;
     text-align: center;
     width: 100%;
-    bottom: 530px;
+    top: 150px;
     z-index: 10;
     color: goldenrod;
     font-weight: 800;
