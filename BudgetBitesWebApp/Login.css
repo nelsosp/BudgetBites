@@ -17,7 +17,7 @@ body, html {
     width: 60%;
     margin: auto;
     /* height: 500px; */
-    left: 128px;
+    left: 175px;
     top: 50px;
     z-index: 10;
 
@@ -109,7 +109,7 @@ button {
 .app_name {
     z-index: 10;
     position: relative;
-    left: 750px;
+    left: 850px;
     top: -325px;
     font-size: 100px;
     color: brown;
