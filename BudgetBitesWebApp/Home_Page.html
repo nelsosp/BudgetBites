@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Home_Page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script defer src="Home_Page.js"></script>
+
+
+    <title>Budget Bites</title>
+
+</head>
+<!-- Get A New One? -->
+    <link rel="icon" href="toplogo.png">
+<body>
+
+    <section class="showcase">
+        <header class="test">
+            <i class="fa-solid fa-bowl-food weblogo"></i>
+            <h2 class="logo">BB</h2>
+            <div class="toggle"></div> 
+        </header>
+
+        <video src="homevideo.mp4" muted loop autoplay></video>
+
+        <div class="text">
+            <p>For the people, By the people</p>
+            <h2>Budget</h2>
+            <h3>Bites</h3>
+            <a href="SearchRecipe.html">Find Recipes</a>
+        </div>
+        <ul class="social">
+            <li><a href="#"><img src="fb.png" alt=""/></a></li>
+            <li><a href="#"><img src="ig.png" alt=""/></a></li>
+            <li><a href="#"><img src="tw.png" alt=""/></a></li>
+        </ul>
+    </section>
+
+    <div class="menu">
+        <ul>
+            <li><a href="Home_Page.html">Home</a></li>
+            <li><a href="SearchRecipe.html">Recipe Finder</a></li>
+            <li><a href="destinations.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Login.html">Log In</a></li>
+        </ul>
+    </div>
+
+
+    <script>
+        const menuToggle = document.querySelector('.toggle')        
+        const showcase = document.querySelector('.showcase')
+
+        menuToggle.addEventListener('click', function () {
+            menuToggle.classList.toggle('active')            
+            showcase.classList.toggle('active')
+
+        })
+
+    </script>
+</body>
+</html>
