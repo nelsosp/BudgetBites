@@ -1,3 +1,4 @@
+/* Search Bar Styling */
 .search-bar {
     z-index: 10;
     position: relative;
@@ -12,7 +13,7 @@
 
 /* Recipe List Display Styling Area*/
 
-/* White box for return area */
+/* Background box for Search Bar and Preferences */
 .recipe-container {
     padding: 150px;
     margin: 0 auto;
@@ -28,6 +29,7 @@
     color: rgba(240, 240, 240, 0);
 }
 
+/* Background area for recipes returned */
 .recipe-list {
     max-height: 60%; 
     width: 80%;
@@ -61,14 +63,15 @@
     color: white;
 }
 
+/* Recipe paragraph text */
 .recipe p {
     color: white;
     font-weight: 800;
 }
 
 
-/* Filter Preferences Styling Area */
 
+/* Filter Preferences Styling Area */
 .Preference-Header {
     position: relative;
     text-align: center;
@@ -79,7 +82,7 @@
 }
 
 
-
+/* Cuisine Box/Selection/Text styling area */
 .cuisine {
     position: relative;
     text-align: center;
@@ -91,7 +94,7 @@
 }
 
 
-
+/* Diet Box/Selection/Text styling area */
 .diet {
     position: relative;
     text-align: center;

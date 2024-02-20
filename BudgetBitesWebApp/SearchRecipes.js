@@ -1,6 +1,6 @@
 const apiKey = '5c3f62a679e74709a953dc430262a44b';
 
-// Function to fetch recipes based on filters and keyword
+// Function to fetch recipes based on filters and keyword within handleSearch Function
 function fetchRecipesWithFilters(maxPrice, cuisine, diet, keyword) {
     let apiUrl = `https://api.spoonacular.com/recipes/complexSearch?maxPrice=${maxPrice}&apiKey=${apiKey}`;
 
@@ -17,7 +17,7 @@ function fetchRecipesWithFilters(maxPrice, cuisine, diet, keyword) {
         });
 }
 
-// Function to fetch recipe details by recipe ID
+// Function to fetch recipe details by recipe ID once displayWithTotalCost is completed
 async function fetchRecipeDetails(recipeId) {
     const apiUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
 
@@ -31,7 +31,7 @@ async function fetchRecipeDetails(recipeId) {
     }
 }
 
-// Function to display recipe details below the respective recipe
+// Function to display recipe details below the respective recipe once fetchRecipeDetails is complete
 function displayRecipeDetails(recipe, recipeItem) {
     if (!recipe) {
         recipeItem.innerHTML += '<p>Recipe details not available.</p>';
@@ -58,7 +58,7 @@ function displayRecipeDetails(recipe, recipeItem) {
     instructionsHeading.textContent = 'Instructions:';
     recipeDetailsDiv.appendChild(instructionsHeading);
 
-    // Check if instructions are in HTML format
+    // Checking if instructions are in HTML format
     if (recipe.instructions && recipe.instructions.length > 0 && recipe.instructions.includes('<ol>') && recipe.instructions.includes('<li>')) {
         // If instructions are already in HTML format, display as is
         const instructionsDiv = document.createElement('div');
@@ -78,6 +78,8 @@ function displayRecipeDetails(recipe, recipeItem) {
     recipeItem.appendChild(recipeDetailsDiv);
 }
 
+
+// Function to displayRecipesWithTotalCost once handleSearch is completed
 async function displayRecipesWithTotalCost(recipes, maxPrice) {
     const recipeContainer = document.getElementById('recipeList');
     recipeContainer.innerHTML = ''; // Clear previous content
@@ -147,6 +149,8 @@ async function handleSearch() {
     await displayRecipesWithTotalCost(recipes, maxPrice);
 }
 
+
+// Once displayRecipesTotalCost is processed, this function helps gather/calculate cost data using recipeId
 async function fetchTotalCost(recipeId) {
     const totalCostUrl = `https://api.spoonacular.com/recipes/${recipeId}/priceBreakdownWidget.json?apiKey=${apiKey}`;
     try {

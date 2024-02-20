@@ -17,6 +17,7 @@
     color:#fff;
 }
 
+/* Overall container styling */
 .showcase {
     position: absolute;
     right: 0;
@@ -32,10 +33,12 @@
     transition: .5s;
 }
 
+/* menu toolbar */
 .showcase.active {
     right: 300px;
 }
 
+/* BB & logo overall styling */
 .showcase header {
     position: absolute;
     top: 0;
@@ -53,11 +56,13 @@
     
 } */
 
+/* BB styling */
 .logo {
     text-transform: uppercase;
     cursor: pointer;
 }
 
+/* menu icon styling for opening menu */
 .toggle {
     position: relative;
     width: 60px;
@@ -69,7 +74,7 @@
     cursor: pointer;
 }
 
-
+/* menu icon styling for closing menu */
 .toggle.active {
     background: url('images/close.png');
     background-repeat: no-repeat;
@@ -77,6 +82,7 @@
     background-position: center;
 }
 
+/* background video styling */
 .showcase video {
     position: absolute;
     top: 0;
@@ -87,12 +93,13 @@
     opacity: 0.8;
 }
 
-
+/* overall landing page text styling */
 .text {
     position: relative;
     z-index: 10;
 }
 
+/* title of webapp Budget styling */
 .text h2{
     font-size: 5em;
     font-weight: 800;
@@ -102,6 +109,7 @@
     position: relative;
 }
 
+/* title of webapp Bites styling */
 .text h3 {
     font-size: 4em;
     font-weight: 700;
@@ -111,6 +119,7 @@
     position: relative;
 }
 
+/* small text styling by title */
 .text p {
     font-size: 1.1em;
     margin: 20px 0;
@@ -119,6 +128,7 @@
     top: -200px;
 }
 
+/* overall Find Recipes button styling */
 .text a {
     display: inline-block;
     font-size: 1em;
@@ -132,11 +142,12 @@
     transition: 0.2s;
 }
 
+/* button hover styling */
 .text a:hover {
     letter-spacing: 6px;
 }
 
-
+/* overall social media icon styling */
 .social {
     position: absolute;
     bottom: 20px;
@@ -146,10 +157,12 @@
     align-items: center;
 }
 
+/* social icon link styling */
 .social li {
     list-style: none;
 }
 
+/* styling for size/hover of social icons */
 .social li a {
     display: inline-block;
     margin-right: 20px;
@@ -157,11 +170,12 @@
     transition: 0.5s;
 }
 
-
+/* social icons hover animation */
 .social li a:hover {
     transform: scale(0.5) translateY(-15px);
 }
 
+/* overall menu styling */
 .menu {
     position: absolute;
     top: 0;
@@ -173,17 +187,20 @@
     justify-content: center;
 }
 
+/* menu positioning styling */
 .menu ul {
     position: relative;
     list-style: none;
 }
 
+/* menu text styling */
 .menu ul li a {
     text-decoration: none;
     font-size: 24px;
     color: #111;
 }
 
+/* menu hover styling */
 .menu ul li a:hover {
     color: brown;
 }

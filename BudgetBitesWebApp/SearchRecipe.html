@@ -9,6 +9,7 @@
 
 <body>
 
+    <!-- Div containing video background and overlay -->
     <div class="showcase">
         <video src="videos/cooking2.mp4" muted loop autoplay></video>
         <!-- <div class="overlay"></div> -->
@@ -24,7 +25,7 @@
     </div>
 
     <h1 class="Preference-Header">Please Input Preferences</h1>
-    <!-- Cuisine Type -->
+    <!-- Cuisine Type Selection Areas -->
     <div class="cuisine" id="cuisine">
         <label><input type="checkbox" value="italian"> Italian</label>
         <label><input type="checkbox" value="mexican"> Mexican</label>
@@ -36,7 +37,7 @@
         <!-- Add more cuisine types if wanting -->
     </div>
 
-    <!-- Diet Type -->
+    <!-- Diet Type Selection Areas -->
     <div class="diet" id="diet">
         <label><input type="checkbox" value="vegetarian"> Vegetarian</label>
         <label><input type="checkbox" value="vegan"> Vegan</label>
@@ -53,13 +54,11 @@
     <div class="recipe-container"></div>
         <h2>.</h2>
         <div class="recipe-list" id="recipeList"></div>
+        <!-- Displays recipe details such as ingredients/instructions -->
         <div id="recipeDetails"></div>
 
-    <!-- Div to display recipe details -->
-    <!-- DOUBLE CHECK THIS, UNSURE IF NEEDED -->
-    <div id="recipeDetails"></div>
 
-    <!-- Include the JavaScript file -->
+    <!-- Javascript file source -->
     <script src="SearchRecipes.js"></script>
 </body>
 </html>

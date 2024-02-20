@@ -10,9 +10,10 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Initialize variables
+// Initializing variables
 const auth = firebase.auth()
 const database = firebase.database()
+
 
 // Register Function
 function register() {
@@ -66,6 +67,7 @@ function register() {
 }
 
 
+
 // Login Function
 function login() {
     // Get all input fields
@@ -108,7 +110,10 @@ function login() {
 }
 
 
+
 // Validate Functions
+
+// Validating email can be used
 function  validate_email(email) {
     expression = /^[^@]+@\w+(\.\w+)+\w$/
     if (expression.test(email) == true) {
@@ -120,6 +125,7 @@ function  validate_email(email) {
     }
 }
 
+// Validating password can be used
 function validate_password(password) {
     // Firebase only allows password that are greater than 6 characters
     if  (password < 6) {
@@ -129,6 +135,7 @@ function validate_password(password) {
     }
 }
 
+// Validating other fields are filled in
 function validate_field(field) {
     if (field == null)  {
         return false

@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Bites</title>
     <link rel="stylesheet" href="Login.css">
+    <!-- Application Title -->
     <h1 class="app_name">Budget Bites</h1>
 </head>
+
+
 <body>
 
-    <!-- <h1 class="app_name">Budget Bites</h1> -->
-
+    <!-- Background image for Login Page -->
     <div class="showcase">
         <img src="images/loginpage.jpg">
     </div>
 
+
+    <!-- Login/Register Container -->
     <div id="content_container">
         <div id="form_container">
+            <!-- Title of Login/Register Container -->
             <div id="form_header_container">
                 <h2 id="form_header"> Login/Register </h2>
             </div>
 
+            <!-- Containers for Login/Register inputs -->
             <div id="form_content_container">
                 <div id="form_content_inner_container">
                     <input type="text" id="full_name" placeholder="Full name">
@@ -28,11 +34,13 @@
                     <input type="password" id="password" placeholder="Password">
                     <input type="password" id="confirm_password" placeholder="Confirm Password">
 
+                    <!-- Login/Register button container -->
                     <div id="button_container">
                         <button onclick="login()">Login</button>
                         <button onclick="register()">Register</button>
                     </div>
 
+                    <!-- Login/Register footer section -->
                     <div class="extra_note">Forgot Password? Click Here</div>
                     <p class="or">or</p>
                     <button class="guest_link">Continue As Guest</button>
@@ -45,13 +53,12 @@
     
 </body>
 
+    <!-- Setting up Firebase within project -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-
-    <!-- https://firebase.google.com/docs/web/setup#available-libraries --> 
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 
-    <!-- Our script must be loaded after firebase references -->
+    <!-- Javascript file source  -->
     <script src="Login.js"></script>
 
 </html>
