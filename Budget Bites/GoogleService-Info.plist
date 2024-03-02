@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyC4EFj7VTAHGYLYE3yigPvMhWcb-crn-mQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>265988483810</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.nelsosp.Budget-Bites</string>
+	<key>PROJECT_ID</key>
+	<string>budget-bites-account-handling</string>
+	<key>STORAGE_BUCKET</key>
+	<string>budget-bites-account-handling.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:265988483810:ios:7fcbb2c117b17ff8db4cbb</string>
+	<key>DATABASE_URL</key>
+	<string>https://budget-bites-account-handling-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
