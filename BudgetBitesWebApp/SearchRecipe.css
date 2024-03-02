@@ -1,0 +1,119 @@
+/* Search Bar Styling */
+.search-bar {
+    z-index: 10;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    top: 130px;
+    color: white;
+    font-weight: 800;
+}
+
+
+
+/* Recipe List Display Styling Area*/
+
+/* Background box for Search Bar and Preferences */
+.recipe-container {
+    padding: 150px;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: -100px;
+}
+
+.recipe-container h2 {
+    color: rgba(240, 240, 240, 0);
+}
+
+/* Background area for recipes returned */
+.recipe-list {
+    max-height: 60%; 
+    width: 80%;
+    overflow-y: auto;
+    text-align: center;
+    position: fixed;
+    border-radius: 15px;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: grey;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.recipe-details {
+    color: white;
+}
+
+/* Borders for recipes */
+.recipe {
+    border: 1px solid white;
+    padding: 40px;
+    cursor: pointer;
+}
+
+/* Recipe title text */
+.recipe h2 {
+    cursor: pointer;
+    z-index: 10;
+    color: white;
+}
+
+/* Recipe paragraph text */
+.recipe p {
+    color: white;
+    font-weight: 800;
+}
+
+
+
+/* Filter Preferences Styling Area */
+.Preference-Header {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    top: 20px;
+    z-index: 10;
+    color: white;
+}
+
+
+/* Cuisine Box/Selection/Text styling area */
+.cuisine {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    top: 100px;
+    z-index: 10;
+    color: brown;
+    font-weight: 800;
+}
+
+
+/* Diet Box/Selection/Text styling area */
+.diet {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    top: 150px;
+    z-index: 10;
+    color: brown;
+    font-weight: 800;
+}
+
+
+/* video background edits */
+.showcase video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* opacity: 0.9; */
+
+}
