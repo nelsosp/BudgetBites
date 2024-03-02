@@ -125,7 +125,7 @@ struct SignInEmailView: View {
             Spacer()
             
             VStack {
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: HomePageView()) {
                     Text("Home")
                 }
                 NavigationLink(destination: Text("Recipe Finder")) {
