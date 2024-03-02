@@ -11,7 +11,7 @@
 		9BA23DD72B8B05730051ED50 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA23DD62B8B05730051ED50 /* AuthenticationManager.swift */; };
 		9BA23DDB2B8B1B140051ED50 /* food2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9BA23DDA2B8B1B140051ED50 /* food2.jpg */; };
 		9BEAA1832B870FBB00867430 /* Budget_BitesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEAA1822B870FBB00867430 /* Budget_BitesApp.swift */; };
-		9BEAA1852B870FBB00867430 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEAA1842B870FBB00867430 /* ContentView.swift */; };
+		9BEAA1852B870FBB00867430 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEAA1842B870FBB00867430 /* HomePageView.swift */; };
 		9BEAA1872B870FBE00867430 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BEAA1862B870FBE00867430 /* Assets.xcassets */; };
 		9BEAA18A2B870FBE00867430 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BEAA1892B870FBE00867430 /* Preview Assets.xcassets */; };
 		9BEAA1952B871CD200867430 /* food.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9BEAA1942B871CD200867430 /* food.jpg */; };
@@ -30,7 +30,7 @@
 		9BA23DDA2B8B1B140051ED50 /* food2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = food2.jpg; sourceTree = "<group>"; };
 		9BEAA17F2B870FBB00867430 /* Budget Bites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budget Bites.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BEAA1822B870FBB00867430 /* Budget_BitesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget_BitesApp.swift; sourceTree = "<group>"; };
-		9BEAA1842B870FBB00867430 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9BEAA1842B870FBB00867430 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		9BEAA1862B870FBE00867430 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BEAA1892B870FBE00867430 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BEAA1942B871CD200867430 /* food.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = food.jpg; sourceTree = "<group>"; };
@@ -75,7 +75,6 @@
 			children = (
 				9BEAA1812B870FBB00867430 /* Budget Bites */,
 				9BEAA1802B870FBB00867430 /* Products */,
-				9BA23DDA2B8B1B140051ED50 /* food2.jpg */,
 				9BA23DCE2B8AFAA40051ED50 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +90,7 @@
 		9BEAA1812B870FBB00867430 /* Budget Bites */ = {
 			isa = PBXGroup;
 			children = (
-				9BEAA1842B870FBB00867430 /* ContentView.swift */,
+				9BEAA1842B870FBB00867430 /* HomePageView.swift */,
 				9BEAA1822B870FBB00867430 /* Budget_BitesApp.swift */,
 				9BA23DD12B8B01590051ED50 /* Authentication */,
 				9BED72A02B8ACA0B00C0609A /* GoogleService-Info.plist */,
@@ -104,6 +103,7 @@
 		9BEAA1882B870FBE00867430 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				9BA23DDA2B8B1B140051ED50 /* food2.jpg */,
 				9BEAA1892B870FBE00867430 /* Preview Assets.xcassets */,
 				9BEAA1942B871CD200867430 /* food.jpg */,
 				9BEAA19C2B8721BE00867430 /* fb.png */,
@@ -197,7 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BEAA1852B870FBB00867430 /* ContentView.swift in Sources */,
+				9BEAA1852B870FBB00867430 /* HomePageView.swift in Sources */,
 				9BA23DD72B8B05730051ED50 /* AuthenticationManager.swift in Sources */,
 				9BEAA1832B870FBB00867430 /* Budget_BitesApp.swift in Sources */,
 				9BA23DD52B8B03560051ED50 /* SignInEmailView.swift in Sources */,

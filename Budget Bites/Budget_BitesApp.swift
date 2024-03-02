@@ -17,7 +17,7 @@ struct Budget_BitesApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomePageView()
         }
     }
 }
