@@ -44,7 +44,7 @@ struct HomePageView: View {
                 
                 Spacer()
                 
-                // Navigation links
+                // Navigation links at bottom of page
                 VStack {
                     NavigationLink(destination: Text("Recipe Finder")) {
                         Text("Recipe Finder")
