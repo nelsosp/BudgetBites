@@ -5,6 +5,7 @@ Budget Bites is your go-to culinary companion, designed to find affordable meals
 [![My Skills](https://skillicons.dev/icons?i=js,html,css,swift,firebase)](https://skillicons.dev)
 
 ## How To See It For Yourself
+### PLEASE NOTE: Need to create backend for API security, therefore as of right now recipe searcher does not return results.
 ##### For the Web side of things, [CLICK HERE](https://nelsosp.github.io/BudgetBites/)
 ##### For iOS, since unable to host on github, please view the screenshots below which contain a landing page, recipe finder, and login page
 
