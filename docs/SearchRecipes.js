@@ -1,3 +1,5 @@
+// Need to implement backend for API key security
+
 // Function to fetch recipes based on filters and keyword within handleSearch Function
 function fetchRecipesWithFilters(
   maxPrice,
