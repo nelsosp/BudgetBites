@@ -1,12 +1,15 @@
 const apiKey = '5c3f62a679e74709a953dc430262a44b';
 
 // Function to fetch recipes based on filters and keyword within handleSearch Function
-function fetchRecipesWithFilters(maxPrice, cuisine, diet, keyword) {
+function fetchRecipesWithFilters(maxPrice, maxPrepTime, cuisine, diet, keyword) {
     let apiUrl = `https://api.spoonacular.com/recipes/complexSearch?maxPrice=${maxPrice}&apiKey=${apiKey}`;
 
     if (cuisine) apiUrl += `&cuisine=${cuisine}`;
     if (diet) apiUrl += `&diet=${diet}`;
     if (keyword) apiUrl += `&query=${keyword}`;
+    if (maxPrepTime) apiUrl += `&maxReadyTime=${maxPrepTime}`;
+
+    apiUrl += '&addRecipeInformation=true';
 
     return fetch(apiUrl)
         .then(response => response.json())
@@ -102,11 +105,15 @@ async function displayRecipesWithTotalCost(recipes, maxPrice) {
             const recipeTitle = document.createElement('h2');
             recipeTitle.textContent = recipe.title;
 
+            const recipePrepTime = document.createElement('p');
+            recipePrepTime.textContent = `Prep Time: ${recipe.readyInMinutes} minutes`;
+
             const recipeImage = document.createElement('img');
             recipeImage.src = recipe.image;
 
             recipeDiv.appendChild(recipeImage);
             recipeDiv.appendChild(recipeTitle);
+            recipeDiv.appendChild(recipePrepTime)
 
             const totalCostInDollars = (totalCost / 100).toFixed(2);
             const totalCostElement = document.createElement('p');
@@ -136,6 +143,7 @@ async function displayRecipesWithTotalCost(recipes, maxPrice) {
 
 async function handleSearch() {
     const maxPrice = parseFloat(document.getElementById('maxPrice').value);
+    const maxPrepTime = parseInt(document.getElementById('maxPrepTime').value);
     const cuisineFilters = Array.from(document.querySelectorAll('#cuisine input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
     const dietFilters = Array.from(document.querySelectorAll('#diet input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
     const keyword = document.getElementById('keyword').value.trim();
@@ -145,7 +153,7 @@ async function handleSearch() {
         return;
     }
 
-    const recipes = await fetchRecipesWithFilters(maxPrice, cuisineFilters.join(','), dietFilters.join(','), keyword);
+    const recipes = await fetchRecipesWithFilters(maxPrice, maxPrepTime, cuisineFilters.join(','), dietFilters.join(','), keyword);
     await displayRecipesWithTotalCost(recipes, maxPrice);
 }
 
