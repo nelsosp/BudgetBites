@@ -6,107 +6,100 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f0f0f0; /* Example background color */
+}
+
+/* Application Title */
+.app_name {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 50px;
+  color: brown;
   z-index: 10;
 }
 
-/* Entire Form Selector styling */
+/* Background image styling */
+.showcase {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.showcase img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Login/Register Container */
+.content_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
 #form_container {
-  position: relative;
   text-align: center;
   background-color: rgba(240, 240, 240, 0.8);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 60%;
-  margin: auto;
-  left: 145px;
-  top: 50px;
-  z-index: 10;
+  width: 70%; /* Adjusted width for larger screens */
+  max-width: 600px;
 }
 
-/* Fields Container styling */
-#form_content_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 70%;
-  margin: auto;
-  z-index: 10;
-}
-
-/* Title of Form Container styling */
-#form_header {
-  position: relative;
-  top: -10px;
-  font-weight: 800;
-  z-index: 10;
-}
-
-/* Input fields styling */
 input {
-  width: 100%;
-  margin-bottom: 25px;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 300px; /* Example: limit maximum width for larger screens */
+  margin-bottom: 15px;
   padding: 10px;
   box-sizing: border-box;
   text-align: center;
-  z-index: 10;
 }
 
-/* login/register button styling */
 button {
+  margin-top: 10px;
   padding: 15px 35px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 10;
 }
 
-/* footer section styling for "forgot password? click here" */
 .extra_note {
-  position: relative;
-  padding: 10px;
-  top: 40px;
+  margin-top: 10px;
   color: blue;
   cursor: pointer;
-  z-index: 10;
 }
 
-/* footer section "or" */
 .or {
-  position: relative;
-  top: 20px;
-  z-index: 10;
+  margin: 10px 0;
 }
 
-/* footer section styling for "continue as guest" */
 .guest_link {
-  background-color: rgba(240, 240, 240, 0.8);
-  color: black;
-  cursor: pointer;
-  position: relative;
+  background-color: transparent;
   color: blue;
-  z-index: 10;
+  cursor: pointer;
+  padding: 10px;
 }
 
-/* background image styling */
-.showcase img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
+/* Responsive adjustments using media queries */
+@media (max-width: 768px) {
+  .app_name {
+    font-size: 35px; /* Example: reduce font size for smaller screens */
+  }
 }
 
-/******PROBLEM...font-size and left skews login/register page. FIX*/
-.app_name {
-  z-index: 10;
-  position: relative;
-  left: 750px;
-  top: -325px;
-  font-size: 100px;
-  color: brown;
+@media (max-width: 480px) {
+  #form_container {
+    width: 70%; /* Adjusted width for very small screens */
+  }
 }
