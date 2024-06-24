@@ -92,6 +92,21 @@
   left: 50%;
   transform: translateX(-50%);
   padding: 5px;
+  background-color: #28a745;
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-finder:hover {
+  background-color: #218838;
+}
+
+.button-finder:active {
+  background-color: #1e7e34;
+  transform: translateX(-50%) translateY(1px);
 }
 
 /* video background edits */
