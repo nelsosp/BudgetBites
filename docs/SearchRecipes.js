@@ -1,4 +1,6 @@
 // Need to implement backend for API key security
+import { config } from './config.js';
+const apiKey = config.apiKey;
 
 // Function to fetch recipes based on filters and keyword within handleSearch Function
 function fetchRecipesWithFilters(
@@ -8,7 +10,7 @@ function fetchRecipesWithFilters(
   diet,
   keyword
 ) {
-  let apiUrl = `https://api.spoonacular.com/recipes/complexSearch?maxPrice=${maxPrice}&apiKey=${apiKey}`;
+  let apiUrl = `https://api.spoonacular.com/recipes/complexSearch?maxPrice=${maxPrice}&apiKey=` + apiKey;
 
   if (cuisine) apiUrl += `&cuisine=${cuisine}`;
   if (diet) apiUrl += `&diet=${diet}`;
@@ -28,7 +30,7 @@ function fetchRecipesWithFilters(
 
 // Function to fetch recipe details by recipe ID once displayWithTotalCost is completed
 async function fetchRecipeDetails(recipeId) {
-  const apiUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
+  const apiUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=` + apiKey;
 
   try {
     const response = await fetch(apiUrl);
@@ -182,7 +184,7 @@ async function handleSearch() {
 
 // Once displayRecipesTotalCost is processed, this function helps gather/calculate cost data using recipeId
 async function fetchTotalCost(recipeId) {
-  const totalCostUrl = `https://api.spoonacular.com/recipes/${recipeId}/priceBreakdownWidget.json?apiKey=${apiKey}`;
+  const totalCostUrl = `https://api.spoonacular.com/recipes/${recipeId}/priceBreakdownWidget.json?&apiKey=` + apiKey;
   try {
     const response = await fetch(totalCostUrl);
     const data = await response.json();
@@ -195,3 +197,5 @@ async function fetchTotalCost(recipeId) {
     return null;
   }
 }
+
+window.handleSearch = handleSearch;
