@@ -1,3 +1,3 @@
 export const config = {
-    apiKey : '6d5f9860bcfb4708884ca1ee542a5c03'
+    apiKey : 'c39d8b7938e54c959aa025cd85526b1b'
 };
