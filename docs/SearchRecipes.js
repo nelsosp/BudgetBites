@@ -1,5 +1,7 @@
 // Need to implement backend for API key security
-const apiKey = "6d5f9860bcfb4708884ca1ee542a5c03";
+import { config } from "./config.js";
+const apiKey = config.apiKey;
+
 // Function to fetch recipes based on filters and keyword within handleSearch Function
 function fetchRecipesWithFilters(
   maxPrice,
@@ -8,7 +10,9 @@ function fetchRecipesWithFilters(
   diet,
   keyword
 ) {
-  let apiUrl = `https://api.spoonacular.com/recipes/complexSearch?maxPrice=${maxPrice}&apiKey=${apiKey}`;
+  let apiUrl =
+    `https://api.spoonacular.com/recipes/complexSearch?maxPrice=${maxPrice}&apiKey=` +
+    apiKey;
 
   if (cuisine) apiUrl += `&cuisine=${cuisine}`;
   if (diet) apiUrl += `&diet=${diet}`;
@@ -28,7 +32,9 @@ function fetchRecipesWithFilters(
 
 // Function to fetch recipe details by recipe ID once displayWithTotalCost is completed
 async function fetchRecipeDetails(recipeId) {
-  const apiUrl = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`;
+  const apiUrl =
+    `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=` +
+    apiKey;
 
   try {
     const response = await fetch(apiUrl);
@@ -182,7 +188,9 @@ async function handleSearch() {
 
 // Once displayRecipesTotalCost is processed, this function helps gather/calculate cost data using recipeId
 async function fetchTotalCost(recipeId) {
-  const totalCostUrl = `https://api.spoonacular.com/recipes/${recipeId}/priceBreakdownWidget.json?apiKey=${apiKey}`;
+  const totalCostUrl =
+    `https://api.spoonacular.com/recipes/${recipeId}/priceBreakdownWidget.json?&apiKey=` +
+    apiKey;
   try {
     const response = await fetch(totalCostUrl);
     const data = await response.json();
@@ -225,3 +233,35 @@ closeCuisineButton.addEventListener("click", () => {
 closeDietButton.addEventListener("click", () => {
   dietOverlay.classList.remove("show");
 });
+
+// Get the overlay elements
+const cuisineButton = document.getElementById("cuisineButton");
+const dietButton = document.getElementById("dietButton");
+
+const cuisineOverlay = document.getElementById("cuisineOverlay");
+const dietOverlay = document.getElementById("dietOverlay");
+
+const closeCuisineButton = document.getElementById("closeCuisine");
+const closeDietButton = document.getElementById("closeDiet");
+
+// Show the overlay for cuisine options
+cuisineButton.addEventListener("click", () => {
+  cuisineOverlay.classList.add("show");
+});
+
+// Show the overlay for diet options
+dietButton.addEventListener("click", () => {
+  dietOverlay.classList.add("show");
+});
+
+// Close the overlay for cuisine options
+closeCuisineButton.addEventListener("click", () => {
+  cuisineOverlay.classList.remove("show");
+});
+
+// Close the overlay for diet options
+closeDietButton.addEventListener("click", () => {
+  dietOverlay.classList.remove("show");
+});
+
+window.handleSearch = handleSearch;

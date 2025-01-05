@@ -94,7 +94,7 @@ button {
 /* Responsive adjustments using media queries */
 @media (max-width: 768px) {
   .app_name {
-    font-size: 35px; /* Example: reduce font size for smaller screens */
+    font-size: 25px; /* Example: reduce font size for smaller screens */
   }
 }
 
