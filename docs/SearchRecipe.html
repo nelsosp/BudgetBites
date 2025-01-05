@@ -11,8 +11,6 @@
     <!-- Div containing video background and overlay -->
     <div class="showcase">
       <video src="videos/cooking2.mp4" muted loop autoplay></video>
-      <!-- <div class="overlay"></div> -->
-      <!-- </div> -->
 
       <!-- Area where search/filter results show up -->
       <div class="recipe-container">
@@ -37,45 +35,69 @@
             min="0"
             placeholder="Max prep time (mins)"
           />
-          <!-- <button onclick="handleSearch()">Find Recipes</button> -->
         </div>
         <button class="button-finder" onclick="handleSearch()">
           Find Recipes
         </button>
 
-        <!-- Cuisine Type Selection Areas -->
-        <div class="cuisine" id="cuisine">
-          <label><input type="checkbox" value="italian" /> Italian</label>
-          <label><input type="checkbox" value="mexican" /> Mexican</label>
-          <label><input type="checkbox" value="thai" /> Thai</label>
-          <label><input type="checkbox" value="japanese" /> Japanese</label>
-          <label><input type="checkbox" value="chinese" /> Chinese</label>
-          <label><input type="checkbox" value="indian" /> Indian</label>
-          <label><input type="checkbox" value="american" /> American</label>
-          <!-- Add more cuisine types if wanting -->
+        <div class="dropdown-container">
+          <!-- Cuisine Button -->
+          <button class="dropdown-btn" id="cuisineButton">
+            Select Cuisine
+          </button>
+
+          <!-- Diet Button -->
+          <button class="dropdown-btn" id="dietButton">Select Diet</button>
         </div>
-        <div class="diet" id="diet">
-          <label><input type="checkbox" value="vegetarian" /> Vegetarian</label>
-          <label><input type="checkbox" value="vegan" /> Vegan</label>
-          <label><input type="checkbox" value="paleo" /> Paleo</label>
-          <label
-            ><input type="checkbox" value="gluten free" /> Gluten-Free</label
-          >
-          <label><input type="checkbox" value="keto" /> Keto</label>
-          <label><input type="checkbox" value="dairy free" /> Dairy-Free</label>
-          <label
-            ><input type="checkbox" value="low calorie" /> Low Calorie</label
-          >
-          <label><input type="checkbox" value="low sodium" /> Low Sodium</label>
-          <!-- Add more diet types if wanting -->
+
+        <!-- Overlay for Cuisine Choices -->
+        <div id="cuisineOverlay" class="overlay">
+          <div class="overlay-content">
+            <h2>Select Cuisine Types</h2>
+            <label><input type="checkbox" value="italian" /> Italian</label>
+            <label><input type="checkbox" value="mexican" /> Mexican</label>
+            <label><input type="checkbox" value="thai" /> Thai</label>
+            <label><input type="checkbox" value="japanese" /> Japanese</label>
+            <label><input type="checkbox" value="chinese" /> Chinese</label>
+            <label><input type="checkbox" value="indian" /> Indian</label>
+            <label><input type="checkbox" value="american" /> American</label>
+            <button class="close-btn" id="closeCuisine">Close</button>
+          </div>
+        </div>
+
+        <!-- Overlay for Diet Choices -->
+        <div id="dietOverlay" class="overlay">
+          <div class="overlay-content">
+            <h2>Select Diet Types</h2>
+            <label
+              ><input type="checkbox" value="vegetarian" /> Vegetarian</label
+            >
+            <label><input type="checkbox" value="vegan" /> Vegan</label>
+            <label><input type="checkbox" value="paleo" /> Paleo</label>
+            <label
+              ><input type="checkbox" value="gluten free" /> Gluten-Free</label
+            >
+            <label><input type="checkbox" value="keto" /> Keto</label>
+            <label
+              ><input type="checkbox" value="dairy free" /> Dairy-Free</label
+            >
+            <label
+              ><input type="checkbox" value="low calorie" /> Low Calorie</label
+            >
+            <label
+              ><input type="checkbox" value="low sodium" /> Low Sodium</label
+            >
+            <button class="close-btn" id="closeDiet">Close</button>
+          </div>
         </div>
       </div>
+
+      <!-- Recipe List -->
       <div class="recipe-list" id="recipeList"></div>
-      <!-- Displays recipe details such as ingredients/instructions -->
+      <!-- Displays recipe details -->
       <div id="recipeDetails"></div>
     </div>
 
-    <!-- Javascript file source -->
     <script src="SearchRecipes.js"></script>
   </body>
 </html>
