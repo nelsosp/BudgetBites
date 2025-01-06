@@ -4,9 +4,9 @@ Budget Bites is your go-to culinary companion, designed to find affordable meals
 ## Leveraged Technologies
 [![My Skills](https://skillicons.dev/icons?i=js,html,css,swift,firebase)](https://skillicons.dev)
 
-## How To See It For Yourself [Web](https://nelsosp.github.io/BudgetBites/)
+## How To See It For Yourself [Web](https://nelsosp.github.io/BudgetBites/) (Spoonacular and Firebase API Key has been removed. Stopping functionality of project due to pricings)
 
-##### For iOS, since unable to host on github, please view the screenshots below which contain a landing page, recipe finder, and login page
+##### For iOS, since unable to host Swift on github, please view the screenshots below which contain a landing page, recipe finder, and login page
 
 <img width="200" src="https://github.com/nelsosp/BudgetBites/assets/124758584/2a663f4f-4851-4db4-89fa-614103bded2b"> <img width="200" src="https://github.com/nelsosp/BudgetBites/assets/124758584/fbdfc5eb-0aaa-40e7-83a0-2ae67704249b"> <img width="200" src="https://github.com/nelsosp/BudgetBites/assets/124758584/e6a171bc-9f02-4ab2-8c84-e9fa47f45946">
 
