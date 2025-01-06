@@ -1,6 +1,6 @@
 // Need to implement backend for API key security
-import { config } from "./config.js";
-const apiKey = config.apiKey;
+// import { config } from "./config.js";
+// const apiKey = config.apiKey;
 
 // Function to fetch recipes based on filters and keyword within handleSearch Function
 function fetchRecipesWithFilters(
@@ -207,30 +207,25 @@ async function fetchTotalCost(recipeId) {
 // Get the overlay elements
 const cuisineButton = document.getElementById("cuisineButton");
 const dietButton = document.getElementById("dietButton");
-
 const cuisineOverlay = document.getElementById("cuisineOverlay");
 const dietOverlay = document.getElementById("dietOverlay");
-
 const closeCuisineButton = document.getElementById("closeCuisine");
 const closeDietButton = document.getElementById("closeDiet");
-
 // Show the overlay for cuisine options
 cuisineButton.addEventListener("click", () => {
   cuisineOverlay.classList.add("show");
 });
-
 // Show the overlay for diet options
 dietButton.addEventListener("click", () => {
   dietOverlay.classList.add("show");
 });
-
 // Close the overlay for cuisine options
 closeCuisineButton.addEventListener("click", () => {
   cuisineOverlay.classList.remove("show");
 });
-
 // Close the overlay for diet options
 closeDietButton.addEventListener("click", () => {
   dietOverlay.classList.remove("show");
 });
+
 window.handleSearch = handleSearch;

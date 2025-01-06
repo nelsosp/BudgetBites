@@ -221,6 +221,20 @@
 } */
 
 @media (max-width: 430px) {
+  .showcase {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("images/homepage.jpg"); /* Path to your image */
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+  .showcase video {
+    display: none;
+  }
   .showcase header {
     position: absolute;
     top: 10px;
@@ -254,5 +268,13 @@
   .text h3 {
     font-size: 3em;
     text-align: center;
+  }
+
+  .text p {
+    font-size: 1em;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+    top: -200px;
   }
 }

@@ -1,10 +1,41 @@
 /* Search Bar Styling */
 .search-bar {
   text-align: center;
-  padding: 5px;
+  border-radius: 15px;
+  margin: 15px auto;
+  padding: 10px;
 }
 
-/* Recipe List Display Styling Area*/
+/* Styling the input fields inside search bar */
+.search-bar input {
+  padding: 8px 8px;
+  margin: 8px 0;
+  width: 80%;
+  max-width: 300px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+/* Hover and focus effects for inputs */
+.search-bar input:hover,
+.search-bar input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
+  outline: none;
+}
+
+/* Styling for placeholder text */
+.search-bar input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Recipe List Display Styling Area */
 
 /* Background box for Search Bar and Preferences */
 .recipe-container {
@@ -13,7 +44,7 @@
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.8);
   position: relative;
-  padding: 70px;
+  padding: 40px;
   justify-content: center;
   top: 20px;
 }
@@ -29,19 +60,14 @@
   top: 400px;
   left: 50%;
   transform: translate(-50%);
-  background-color: grey;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 10;
-}
-
-.recipe-details {
-  color: white;
 }
 
 /* Borders for recipes */
 .recipe {
   border: 1px solid white;
-  padding: 40px;
+  padding: 20px;
   cursor: pointer;
 }
 
@@ -50,19 +76,22 @@
   cursor: pointer;
   z-index: 10;
   color: white;
+  font-size: 18px;
 }
 
 /* Recipe paragraph text */
 .recipe p {
   color: white;
   font-weight: 800;
+  font-size: 14px;
 }
 
 /* Filter Preferences Styling Area */
 .Preference-Header {
   text-align: center;
   color: white;
-  margin-top: -50px;
+  margin-top: -30px;
+  font-size: 18px;
 }
 
 /* Cuisine Box/Selection/Text styling area */
@@ -70,9 +99,10 @@
   position: relative;
   text-align: center;
   width: 100%;
-  top: 40px;
+  top: 30px;
   color: brown;
   font-weight: 800;
+  font-size: 14px;
 }
 
 /* Diet Box/Selection/Text styling area */
@@ -80,22 +110,24 @@
   position: relative;
   text-align: center;
   width: 100%;
-  top: 50px;
+  top: 40px;
   color: brown;
   font-weight: 800;
+  font-size: 14px;
 }
 
+/* Button Styling */
 .button-finder {
   position: absolute;
   text-align: center;
   width: 50%;
   left: 50%;
   transform: translateX(-50%);
-  padding: 5px;
+  padding: 8px;
   background-color: #28a745;
   color: hsl(0, 0%, 100%);
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
@@ -122,32 +154,33 @@
 /* Basic styling for the buttons */
 .dropdown-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .dropdown-btn {
-  background-color: #4caf50;
+  background-color: brown;
   color: white;
-  padding: 10px;
-  font-size: 16px;
+  padding: 6px;
+  font-size: 14px;
   border: none;
   cursor: pointer;
-  width: 48%;
-  text-align: left;
-  border-radius: 5px;
+  width: 30%;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 5px;
 }
 
 /* Overlay (background) */
 .overlay {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -156,34 +189,54 @@
 /* Content inside the overlay */
 .overlay-content {
   background-color: #fff;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   max-height: 80%;
   overflow-y: auto;
-  width: 300px;
+  width: 250px;
   text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 /* Close button */
 .close-btn {
-  background-color: #f44336; /* Red */
+  background-color: #f44336;
   color: white;
   border: none;
-  padding: 10px;
-  font-size: 16px;
+  padding: 8px;
+  font-size: 14px;
   cursor: pointer;
   margin-top: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
+  align-self: center;
 }
 
 /* Style the labels */
 .overlay-content label {
   display: block;
-  padding: 8px 0;
-  font-size: 14px;
+  padding: 6px 0;
+  font-size: 12px;
   cursor: pointer;
 }
 
 .overlay.show {
   display: flex;
+}
+
+@media screen and (max-width: 430px) {
+  .showcase {
+    position: relative; /* Make sure it's positioned for the background to work */
+    background-image: url("images/searchrecipe.jpg"); /* Path to your image */
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+
+  /* Optionally, hide the video for smaller screens */
+  .showcase video {
+    display: none;
+  }
 }
