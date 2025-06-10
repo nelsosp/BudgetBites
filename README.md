@@ -10,6 +10,4 @@ Budget Bites is your go-to culinary companion, designed to find affordable meals
 
 <img width="200" src="https://github.com/nelsosp/BudgetBites/assets/124758584/2a663f4f-4851-4db4-89fa-614103bded2b"> <img width="200" src="https://github.com/nelsosp/BudgetBites/assets/124758584/fbdfc5eb-0aaa-40e7-83a0-2ae67704249b"> <img width="200" src="https://github.com/nelsosp/BudgetBites/assets/124758584/e6a171bc-9f02-4ab2-8c84-e9fa47f45946">
 
-https://github.com/nelsosp/BudgetBites/raw/assets/124758584/7fc13f32-082e-48b4-bf58-4ac67a8a533f.mov
-
 
